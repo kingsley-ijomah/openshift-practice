@@ -1,4 +1,4 @@
-FROM ruby:2.6.5
+FROM ruby:2.4.6
 
 # Install dependencies:
 
