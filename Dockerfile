@@ -46,4 +46,4 @@ ADD . $APP_HOME
 EXPOSE 3000
 
 # The default command that gets ran will be to start the Puma server.
-CMD bundle exec puma -C config/puma.rb
+# CMD bundle exec puma -C config/puma.rb
