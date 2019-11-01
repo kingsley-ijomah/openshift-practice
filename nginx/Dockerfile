@@ -25,7 +25,7 @@ COPY config/nginx.conf /tmp/docker_example.nginx
  
 # substitute variable references in the Nginx config template for real values from the environment
 # put the final config in its place
-# RUN envsubst '$RAILS_ROOT, $APP_NAME' < /tmp/docker_example.nginx > /etc/nginx/conf.d/default.conf
+RUN envsubst '$RAILS_ROOT, $APP_NAME' < /tmp/docker_example.nginx > /etc/nginx/conf.d/default.conf
 
  
 EXPOSE 8080
