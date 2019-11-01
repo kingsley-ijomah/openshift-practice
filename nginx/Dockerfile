@@ -38,7 +38,7 @@ EXPOSE 8081
 RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
 
 # support running as arbitrary user which belogs to the root group
-RUN chmod g+rwx log/nginx.access.log
+# RUN chmod g+rwx log/nginx.access.log
 
 # Use the "exec" form of CMD so Nginx shuts down gracefully on SIGTERM (i.e. `docker stop`)
 CMD [ "nginx", "-g", "daemon off;" ]
