@@ -1,31 +1,5 @@
 # Base image:
-FROM nginx:alpine
-
-# Install dependencies
-RUN apt-get update -qq && apt-get -y install apache2-utils
-
-# for vim
-RUN apt-get install -y vim
- 
-# establish where Nginx should look for files
-ENV RAILS_ROOT /myapp
-ENV APP_NAME docker_app
- 
-# Set our working directory inside the image
-WORKDIR $RAILS_ROOT
- 
-# create log directory
-RUN mkdir log
- 
-# copy over static assets
-COPY public public/
- 
-# Copy Nginx config template
-COPY config/nginx.conf /tmp/docker_example.nginx
- 
-# substitute variable references in the Nginx config template for real values from the environment
-# put the final config in its place
-RUN envsubst '$RAILS_ROOT, $APP_NAME' < /tmp/docker_example.nginx > /etc/nginx/conf.d/default.conf
+FROM nginx
 
  
 EXPOSE 8080
