@@ -20,7 +20,7 @@ WORKDIR $RAILS_ROOT
 RUN mkdir log
 
 # support running as arbitrary user which belogs to the root group
-RUN chmod g+rwx $RAILS_ROOT/log/myapp/log/nginx.access.log
+RUN chmod g+rwx /log/myapp/log/nginx.access.log
  
 # copy over static assets
 COPY public public/
