@@ -1,5 +1,5 @@
 # Base image:
-FROM nginx
+FROM nginx:alpine
 
  
 EXPOSE 8080
