@@ -15,7 +15,7 @@ ENV APP_NAME docker_app
 WORKDIR $RAILS_ROOT
  
 # create log directory
-RUN mkdir log
+# RUN mkdir log
  
 # copy over static assets
 # COPY public public/
