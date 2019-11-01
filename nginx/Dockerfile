@@ -1,5 +1,5 @@
 # Base image:
-FROM nginx
+FROM nginxinc/nginx-unprivileged
 
 # Install dependencies
 RUN apt-get update -qq && apt-get -y install apache2-utils
