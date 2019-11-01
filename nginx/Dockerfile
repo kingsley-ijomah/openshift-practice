@@ -15,17 +15,17 @@ ENV APP_NAME docker_app
 WORKDIR $RAILS_ROOT
  
 # create log directory
-# RUN mkdir log
+RUN mkdir log
  
 # copy over static assets
-# COPY public public/
+COPY public public/
  
 # Copy Nginx config template
-# COPY config/nginx.conf /tmp/docker_example.nginx
+COPY config/nginx.conf /tmp/docker_example.nginx
  
 # substitute variable references in the Nginx config template for real values from the environment
 # put the final config in its place
-# RUN envsubst '$RAILS_ROOT, $APP_NAME' < /tmp/docker_example.nginx > /etc/nginx/conf.d/default.conf
+RUN envsubst '$RAILS_ROOT, $APP_NAME' < /tmp/docker_example.nginx > /etc/nginx/conf.d/default.conf
 
  
 EXPOSE 8080
